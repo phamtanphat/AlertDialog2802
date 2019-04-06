@@ -29,13 +29,18 @@ public class MainActivity extends AppCompatActivity {
                 builder.setCancelable(false);
 
                 final String mangmonhoc[] = {"Android","React native","ios","php","css"};
-
-
-                builder.setSingleChoiceItems(mangmonhoc, -1, new DialogInterface.OnClickListener() {
+                boolean mangchecked[] = {false,false,false,false,false,false};
+//                builder.setSingleChoiceItems(mangmonhoc, -1, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int position) {
+//                        Toast.makeText(MainActivity.this, mangmonhoc[position], Toast.LENGTH_SHORT).show();
+//                        dialog.cancel();
+//                    }
+//                });
+                builder.setMultiChoiceItems(mangmonhoc, mangchecked, new DialogInterface.OnMultiChoiceClickListener() {
                     @Override
-                    public void onClick(DialogInterface dialog, int position) {
-                        Toast.makeText(MainActivity.this, mangmonhoc[position], Toast.LENGTH_SHORT).show();
-                        dialog.cancel();
+                    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+
                     }
                 });
                 builder.show();
